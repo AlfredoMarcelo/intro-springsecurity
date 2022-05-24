@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head data-th-replace="parts/head :: cabecera(~{::title}, _)">
+<meta charset="UTF-8"/>
+
+<title>Ingreso</title>
+</head>
+<body class="">
+<div class="container ">
+	<div class="row">
+		<div class="col-5 col-md-5 col-lg-5  col-xl-4 col-xxl-3 mx-auto  mt-5 rounded-3 border-light">
+		
+		
+	  <form method="POST" data-th-action="@{/ingreso}" class="px-4 py-3">
+	  	<div data-th-if="${param.error}" class="alert alert-danger">
+			Usuario y/o contraseña inválido(s).
+		</div>
+	    <div class="mb-3 text-center text-light">
+	     
+	    </div>
+	    <div class="mb-3">
+	      <label for="username" class="form-label">Usuario</label>
+	      <input type="text" class="form-control" name="username" >
+	    </div>
+	    <div class="mb-3">
+	      <label for="password" class="form-label">Password</label>
+	      <input type="password" class="form-control" name="password" >
+	    </div>
+	    <div class="mb-3">
+	      <div class="form-check">
+	        <input type="checkbox" class="form-check-input" id="dropdownCheck">
+	        <label class="form-check-label" for="dropdownCheck">
+	          Remember me
+	        </label>
+	      </div>
+	    </div>
+	    <button type="submit" class="btn btn-success">Sign in</button>
+	  </form>
+		</div>
+	</div>
+</div>
+	<div data-th-replace="parts/scripts :: scripts"></div>
+</body>
+</html>
